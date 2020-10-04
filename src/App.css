@@ -1,38 +1,79 @@
-.App {
+body{
+  padding: 0;
+  margin: 0;
+}
+.main--content{
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  width: 100vw;
   text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.first--renew--part{
+  display: flex;
+  flex: .5;
+  flex-direction: column;
+  align-self: center;
+  text-align: center;
+  border-right: 2px solid black;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.first--renew--part form{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.first--renew--part h1,h3{
+  margin: 1.5rem 0;
+  
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.first--renew--part select, input, button{
+  padding: 1rem;
+  margin: 1.5rem 4rem;
+}
+.etags--hero{
+  display: flex;
+  flex: .5;
+  flex-direction: column;
+  align-self: center;
+  text-align: center;
+}
+.etags--hero h3{
+  font-style: italic;
+  font-weight: 400;
+}
+.confirm--form {
+  display: flex;
+  flex: .5;
+  flex-direction: column;
+  align-self: center;
+  text-align: center;
+}
+.confirm--form form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 2px solid #000000;
+  margin: 0 4rem;
+}
+.prev--step{
+  border: none;
+  color: rgb(0, 110, 255);
+  text-decoration: underline;
+}
+.alert--message{
+  position: absolute;
+  text-align: center;
+  top: 10%;
+}
+@media only screen and (max-width: 980px) {
+  .main--content{
+      flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  .first--renew--part{
+    border-bottom: 2px solid black;
+    border-right: none;
+  }
+  .etags--hero {
+    margin: 4rem 0;
   }
 }
