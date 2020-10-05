@@ -6,14 +6,12 @@ export class Confirm extends Component {
         this.props.prevStep();   
     }
     success = () => {
-        const mainContent = document.querySelector('.main--content');
         const success = document.querySelector('.success-alert');
         success.innerText = 'Thank you, your order is complete.';
         success.style.color = 'green';
         setTimeout(() => {
-            success.innerText = '';
             window.location.reload();
-        }, 3000)
+        }, 2000)
         
     }
     render() {
@@ -30,7 +28,7 @@ export class Confirm extends Component {
                     </form>
                    
                     <button onClick={this.success}>RENEW</button>
-                    <h1 className="success-alert"></h1>
+                    <h1 className="success-alert"> </h1>
                     <button className="prev--step" onClick={this.goBack}>Go Back</button>
                
             </div>

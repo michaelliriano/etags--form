@@ -30,6 +30,7 @@ export class MainForm extends Component {
                 )
             case 2:
                 return <Confirm prevStep={this.prevStep} values={values} />
+            default: 
         }
     }
 }

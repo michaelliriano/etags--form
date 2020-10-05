@@ -17,7 +17,7 @@ export class UserDetails extends Component {
             spans[7].innerText = ''
         }, 2000)
         }
-        else if(!(/^[^+_=/*?@#$%&()'"|â„;:{}.,`~<>}{][^\\]{2,7}$/.test(values.license))) {
+        else if(!(/^[^+_=/*?@#$%&()'"|â„;:{}.,`~<>}{][^\\]{2,5}$/.test(values.license))) {
             const spans = e.target.children;
             spans[4].style.color = 'Red';
             spans[4].innerText = 'License Plate must be between 3-6 characters long';
@@ -38,11 +38,22 @@ export class UserDetails extends Component {
             console.log(this.props)
         } 
     }
-    validateLicense = (e) => {
-        console.log('validation');
-    }
     render() {
         const { values, handleChange } = this.props;
+        const options = [
+            {
+                label: "Ford",
+                value: "ford"
+            },
+            {
+                label: "Honda",
+                value: "honda",
+            },
+            {
+                label: "Toyota",
+                value: "toyota"
+            }
+        ]
         return (
             <div class="first--renew--part container">
                 <form action="" onSubmit={this.continue}>
@@ -52,11 +63,11 @@ export class UserDetails extends Component {
                     <input type="text" placeholder="License Plate" onChange={handleChange('license')} defaultValue={values.license}/>
                     <span></span>
                     <label for="Vehicle Make"></label>
-                    <select name="cars" id="cars" onChange={handleChange('vehicle')} defaultValue={values.vehicle} >
-                        <option value="" disabled selected hidden defaultValue={values.vehicle}>Vehicle Make</option>
-                        <option value="Ford">Ford</option>
-                        <option value="Honda">Honda</option>
-                        <option value="Toyota">Toyota</option>
+                    <select onChange={handleChange('vehicle')} defaultValue=''>
+                    <option disabled value=''>Vehicle Make</option>
+                    {options.map((option) => (
+                        <option value={option.value}>{option.label}</option>
+                     ))}
                     </select>
                     <span></span>
                     <button >NEXT</button>
